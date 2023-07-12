@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 속성</title>
+    <style>
+    #area { border:3px solid red; padding: 30px;
+    width: 1000px; margin: 30px auto;}
+    .box {width: 200px; height: 100px; margin:25px; border:2px solid rgb(33, 182, 3); }
+    .inline .box {display: block;}
+    .none .box { visibility: hidden; background-color: darkblue ;}
+    .inline .box:first-of-type {border-radius: 50px}   /*first-child는 전체에서 타입 순서를 찾음*/
+    .inline .box:nth-of-type(2) {border-radius: 2em / 5em;}
+    .inline .box:nth-of-type(3) {border-radius: 30% / 15%;}
+    .inline .box:last-of-type {border-radius: 50% 100%;}
+    .date {display:block; width: 240px; heihgt: 20px ;}
+    .over .box:first-of-type {overflow:auto;}  /*흘러넘칠때 스크롤 생김*/
+    .over .box:nth-of-type(2) {overflow:hidden} /*숨겨짐*/
+    .over .box:nth-of-type(3) {overflow:scroll; height: 300px;} /**/
+    .over .box:nth-of-type(3) .date {width :100px; height: 100px; overflow:hidden}        
+    .over .box:last-of-type {overflow:auto; height: 300px;}
+    .box.size {padding:90px; border-width: 5px; margin:20px;}
+    .box.size:first-of-type{box-sizing: content-box;}
+    .box.size:nth-of-type(2){box-sizing: border-box;}
+    /* 선택자 우선순위: 1. id, 2. class, 3. 태그 = 금메달 순위로 생각해보면 좋음 */
+    </style>
+
+</head>
+<body>
+    <div class="" id="area">
+        <section class="con inline">
+            <h2 class="tit">인라인 배치</h2>
+            <div class="box">박스1</div>
+            <div class="box">박스2</div>
+            <div class="box">박스3</div>
+            <div class="box">박스4</div>
+        </section>
+            <section class="con block">
+            <h2 class="tit">블록배치</h2>
+            <span class="box">박스1</span>
+            <span class="box">박스2</span>
+            <span class="box">박스3</span>
+            <span class="box">박스4</span>
+
+        </section>
+        <section class="none">
+            <h2 class="tit">블록배치</h2>
+            <span class="box">논박스1</span>
+            <span class="box">논박스2</span>
+            <span class="box">논박스3</span>
+            <span class="box">논박스4</span>
+
+        </section>
+        <section class="con over">
+            <h2 class="tit"></h2>
+            <br>            <hr>            <br>
+            <div class="box">오버박스1<span class="date">auto황교진은 그렇다네 그렇다네 그렇다네</span></div>
+            <div class="box">오버박스2<span class="date">hidden황교진은 그렇다네 그렇다네 그렇다네</span></div>
+            <div class="box">오버박스3<span class="date">scroll황교진은 그렇다네 그렇다네 그렇다네</span></div>
+            <div class="box">오버박스4<span class="date">visible황교진은 그렇다네 그렇다네 그렇다네</span></div>
+        </section>
+        <br>
+        <div class="box_size">
+            <div class="box size" id="box1">박스크기1</div>
+            <div class="box size">박스크기2</div>
+            <div class="box size">박스크기3</div>
+            <div class="box size">박스크기4</div>
+
+        </div>
+    </div>
+    <script>
+        
+        var box = document.getElementById(box1);
+        box.style.background color = "gold";
+    </script>
+<h1>css 출력 및 박스 관련 속성</h1>
+    <p>display, visibility, opacity, width, height, overflow, margin, padding, border 등</p>
+    <p>모든 속성의 값에 initial(초기값), inherit(상속-부모요소에 내용을 그대로 자식요소가 받음)</p>
+    <hr>
+    <h2>display : 화면 출력 모드를 지정하는 속성</h2>
+    <p>태그마다 화면 출력 모드가 block, inline, inline-block 등으로 구성</p>
+    <p>inline 속성 요소: span, a, strong, em, ins 등<br>
+        특징 : 한 줄 안에 자동 줄바꿈이 될 때까지 배치되며, 크기 지정을 할 수 없어 
+        width, height, line-height, text-indent, text-align, paddign-top, padding-bottom, margin-top, margin-bottom 등의 속성을 지정할 수 없다.
+        </p>
+        <p>block 속성 욧 : div, h1~h6, p, section, article, header, footer<br>
+        특징 : 자동으로 다음 줄에 배치가 되며, 크기과 관련된 속성을 지정할 수 있다.</p>
+        <p>부여 가능한 속성의 값 : inline |block | inline-block | none <br>
+            부여 가능한 속성 값2 : contents, flex, grid, box, inline-flex, inline-grid, inline-table, list-item, run-in
+                                  table-caption, table-column, table-row, table-cell, table=header-group, table-group, 
+                                  table-column-group, table-row-group 등
+        </p><hr>
+    <h2>visibility(가시속성)</h2>
+        <p>보일지 보이지 않을지를 나타내는 속성</p>
+        <p>visible | collapse | hidden(영역은 차지하나 보이지 않을뿐, none은 영역도 제외)</p>
+        <hr>
+    <h2>opacity(불투명도속성)</h2>
+        <p>불투명 정도를 나타내는 속성</p>
+        <p>값 : 0~1 까지의 실수 | 정수로 표시하며, 0은 투명, 1은 불투명<br>
+           해당 요소의 글자와 모든 배경 이미지, 색상을 포함한 모든 콘텐츠를 지정할 수 있다.</p>
+    <hr>
+    <h2>width(너비속성), height(높이속성)</h2>
+        <p>가로(폭=너비)의 크기를 지정하는 속성</p>
+        <p>auto | length | % | </p>
+        <p>length는 px, pt, pc, cm, mm, in(ch), vw, vmin(현재기기 최소폭), vmax(현재 기기 최대폭) 등의 단위로 지정이 가능</p>
+        <p>기본 화면 출력속성이 블록요소 또는 인라인블록요소 등에만 크기지정이 가능함.</p>
+        <hr>
+    <h2>overflow(흘러넘침속성)</h2>
+        <p>콘텐츠의 양이 지정한 크기(폭/높이)보다 더 클 경우 지정</p>
+        <p>auto | visibel | hidden | scroll | clip</p>
+        <h3>세부속성 - overflow-x(가로), overflow-y(세로)</h3>
+        <hr>
+    <h2>margin(바깥여백)</h2>
+        <p>현재 테두리(콘텐츠) 영역의 바깥 여백으로서 콘텐츠와 콘텐츠 사이의 여백</p>
+        <p>auto | length | % </p>
+        <p>세부속성 - margin-left | top | bottom | right (통합속성을 먼저 지정 후 다음에 세부속성을 지정하여야 함)</p>
+        <p>margin 1, 2 ->상하, 좌우 | maring 1, 2, 3 -> 상, 하, 좌우 | margin 1, 2, 3, 4 -> 상, 우, 하, 좌(시계방향)<br>
+        auto는 좌우만 걸 수 있다. / maring 25px auto -> 세로는 25px, 가로는 auto  </p>
+    <h2>padding(안쪽여백 - 콘텐츠 안에 콘텐츠)</h2>
+        <p>지정한 폭/넓이에 padding과 border 값을 더한 값이 실제 콘텐츠의 크기가 된다.</p>
+        <p>margin과 같음</p>
+        <hr>
+    <h2>border(테두리)</h2>
+        <p>width, style, color</p>
+        <p>ex) border 1px solid #000;<br>
+                1px 두께의 검은색 실선</p>
+        <p>width는 선의 두께로 px, pt, pc, cm, mm, in(ch), vw, vmin(현재기기 최소폭), vmax(현재 기기 최대폭) 등의 단위로 지정이 가능</p>
+        <p>style는 선의 모양으로 solid(실선), none, hidden, dotted(둥근점선), dashed(사각점선), double(두 줄), groove(은각), 
+            ridge, inset, outset 등의 지정이 가능   </p>
+        <p>color는 선의 색으로서 컬러명, 16진(hex)코드, rgb()/rgba(), hsl()/hsla() 등으로 지정이 가능</p>
+        <h3>카테고리별 세부속성</h3>
+            <h4>border-width(선두께) | style(선종류) | color(선색상)</h4>
+                <p>margin과 동일한 지정방식이며, (상우하좌) 지정 따로 따로 가능</p>
+        <h3>방향별 세부속성</h3>
+            <h4>border-left(왼쪽테두리) : 2px double, gold</h4>
+        <h3>세세속성(예시)</h3>   
+            <p>border-left-width | border-right-style 등 가능</p>
+            <p>border-방향-속성 순</p>
+    <h2>box-sizing(박스의 크기 산정방법)</h2>
+        <p>박스의 크기를 지정한 너비/높이의 콘텐츠, padding, border의 포함유무를 지정 </p>
+        <p>content-box(콘텐츠만 지정) | border-box(콘텐츠+padding+border로 적용) </p>
+        <hr>
+    <h2>border-radius(테두리둥글기)</h2>
+        <p>선의 두께로 px, pt, pc, cm, mm, in(ch), vw, vmin(현재기기 최소폭), vmax(현재 기기 최대폭) 등의 단위로 지정이 가능</p>
+        <p>ex1) border-radius: 20px</p>
+        <p>ex2) border-radius: 50%</p>
+        <p>ex3) border-radius: 상, 우, 하, 좌 가능</p>
+        <p>ex4) border-top-left-radius: 20px (순서: 위좌, 위우, 아래우, 아래좌)</p>
+        
+        
+    
+
+        
+    
+
+
+
+</body>
+</html>

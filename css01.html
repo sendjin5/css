@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 지정하기</title>
+    <style>
+        .rule {color:hsla(0,72,38,);}       <!--color: #ff000 or color: hs1(0,72,38)}-->
+        .rule {color:deeppink}              <!--같은 스타일에 같은 속성을 할 경우 마지막에 한게 적용됨-->
+    </style>
+</head>
+<body>
+    <h2>스타일 기본 문법</h2>
+    <p class"rule">문법: 선택자{속성:값; 속성2:값2}</p>   <!--선택자 {속성:값; 속성2:값2}-->
+    <p class="comment">선택자(selector): 서식을 지정하고 싶은 요소</p>
+    <p class="commont">속성(Properties): 부여하고 싶은 스타일의 정해진 단어의 특성을 지정</p>
+    <p class="commont">값(value): 해당 속성으로 지정가능한 키워드</p>
+
+
+    <h2>스타일 지정 방식</h2>
+    <h3>인라인 스타일 방식</h3>      <!-->>span, 크기를 지정할 수 없음(오디오, 동영상/ but 다른 방법 가능)-->
+    <p class="comment"> 해당 요소에 style 속성(attribute)으로 직접 지정하므로 해당 스타일이 그 요소에만 지정되므로, 재사용성이 떨어지고, 변경하기 힘듦
+        필요외 가급적 사용X
+        </p>
+    <code>
+        &lt;span style="color: red"&gt;첫 단어&lt;/span&gt;   <!-- 태그에 내용을 표시하고 싶을때 &rt;내용&gt;로 표기-->
+        <span style="color: red">첫 단어</span>
+        <span></span>
+        <span style="color: blue">셋 단어</span>
+    </code>
+    <hr>
+    <h3>내부 스타일 방식</h3>
+    <p class="comment">해당 문서의 head태그 안쪽에 style 태그로 지정하여 현재 문서에 적용할 경우 활용
+        재사용성 중간, 현재 문서에만 적용
+        </p>
+    <code>
+    &lt;style&gt; .comment {color:blue;} &lt;style&gt;
+    </code>
+    <h3>외부 스타일 방식</h3>
+    <p class="comment">별도의 css 파일을 작성하여 해당 html 문서의 연결하여 사용하는 방식
+        재사용성 Good, 필요한 곳에 link 태그 활용하여 연결하고 필요가 없는 경우 link 기술을 없애도 됨
+     </p>
+
+    <code>
+    &lt;link href="style1.css" rel="stylesheet" /&gt;
+    <br>
+    ----------------------------------style1.css-----------------------------
+    <br>
+    @charset "UTF-8"
+   
+    선택자 {속성: 값}
+    </code>
+    <br>    
+    <hr>
+    <h3>크기 단위</h3>
+    <p class="comment">스타일에서 콘텐츠나 요소의 크기를 지정할 때는 px(13px=13pt 정도, 모니터에 해상도에 따라 크기가 달라보임), pt(문서), %(글자X), em(rem), vh(기기에 따라 바뀜, 원페이지 형식으로 스크롤 내릴때, 모바일), vw(폭)</p>
+
+    <hr>
+    <h3>색상 단위</h3>
+    <p class="coment">웹 컬러를 나타내는 방식으로 컬러명, 16진 코드 6자리, 16진 3자리
+        hsl(색각도, 채도(0~100), 명도), hsla(+불투명도(0~1)), rgb(빨간,초록,파랑의 양), rgba(+불투명도) 등을 활용할 수 있음
+        </p>
+        <br>
+        <hr>
+    
+    <h3>각도 단위</h3>
+        <p class="comment">해당 요소를 회전하려고 할 경우 활용하며, deg(각도), turn(몇 바퀴) 등으로 명시
+        <br>
+
+    <h3>시간 단위</h3>
+    <p class="comment">애니메이션이나 지연 시간등의 지정하며, 단위로는 s(초), ms(밀리초)</p>
+
+
+
+
+
+    
+
+        
+        
+        
+        
+        </p>
+
+</body>
+</html>
