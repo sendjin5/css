@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>속성(properties) - 기타 속성</title>
+    <style>
+        #canvas, #con {width: 1280px; margin: 100px auto;}S
+        .mouse {width: 1280px; clear: both; min-width: 100vh;}
+        .mouse::after { content: ""; clear: both; display: block; width: 100%;}
+        .mouse ul {list-style: none; clear: both;}
+        .mouse li {width: 100px;height: 100px;margin: 15px;border: 1px solid #335; float: left;}
+        .mouse li.alias {cursor: alias;}
+        .mouse li.all-scroll {cursor: all-scroll;}
+        .mouse li.auto {cursor: auto;}
+        .mouse li.cell {cursor: cell;}
+        .mouse li.col-resize {cursor: col-resize;}
+        .mouse li.context-menu {cursor: context-menu;}
+        .mouse li.copy {cursor: copy;}
+        .mouse li.crosshair {cursor: crosshair;}
+        .mouse li.default {cursor: default;}
+        .mouse li.e-resize {cursor: e-resize;}
+        .mouse li.ew-resize {cursor: e-resize;}
+        .mouse li.grab {cursor: grab;}
+        .mouse li.grabbing {cursor: grabbing ;}
+        .mouse li.help {cursor:help;}
+        .mouse li.move {cursor:move ;}
+        .mouse li.no-drop {cursor:no-drop ;}
+        .mouse li.none {cursor:none ;}
+        .mouse li.not-allowed {cursor: not-allowed;}
+        .mouse li.pointer {cursor:pointer ;}
+        .mouse li.progress {cursor: progress;}
+        .mouse li.row-resize {cursor: row-resize;}
+        .mouse li.s-resize {cursor: s-resize;}
+        .mouse li.text {cursor:text ;}
+        .mouse li.url {cursor: url(./image/b2.cur) 20 30, auto;}
+        .mouse li.zoom-in {cursor:zoom-in ;}
+        .mouse li. {cursor: ;}
+
+        /*disc(가운데 구멍뚫린) | circle(외곽선만 있는) | square <br>
+        dicemal | armenian | georgian | hebrew | hiragana | katakana | lower-alpha | lower-greek | lower-latin <br>
+        lower-roman | upper-alpa | upper-greek | upper-latin | upper-roman | cjk-ideographic */
+        
+        .list li.disc {list-style: disc;}
+        .list li.circles {list-style-type: circle;}
+        .list li.armenian {list-style-type: armenian;}
+        .list li.aa1 {list-style-type: square ;}
+        .list li.aa2 {list-style-type: upper-latin;}
+        .list li.aa3 {list-style-type: katakana  ;}
+        .list li.aa4 {list-style-type:  ;}
+        .list li.aa5 {list-style-type:  ;}
+        .list li.aa6 {list-style-type:  ;}
+        .list li.aa7 {list-style-type:  ;}
+        .list li.aa8 {list-style-type:  ;}
+        .list li.aa9 {list-style-type:  ;}
+        .list li.aa10 {list-style-type:  ;}
+
+
+        .ts {clear: both; width: 100%; border: 2px solid #333;}
+        .tit-box {width: 900px; height: 100px; line-height: 100; text-align: center;}
+        .tit-box h2 {font-size: 60px; color: deepskyblue;}
+
+        .tit-box:nth-child(4) {background: #000;}
+        .tit-box h2.ts-tit4 {color: #fff;  text-shadow: #ff00de;}
+        
+
+    </style>
+      
+</head>
+<body>
+
+
+    <div id="canvas">
+        <article class="mouse">
+            <ul>
+                <li class="alias">모양1</li>
+                <li class="all-scroll">모양2</li>
+                <li class="auto">모양3</li>
+                <li class="cell">모양4</li>
+                <li class="col-resize">모양5</li>
+                <li class="context-menu">모양6</li>
+                <li class="copy">모양7</li>
+                <li class="crosshair">모양8</li>
+                <li class="default">모양9</li>
+                <li class="e-resize">모양10</li>
+                <li class="ew-resize">모양11</li>
+                <li class="grab">모양12</li>
+                <li class="grabbing">모양13</li>
+                <li class="help">모양14</li>
+                <li class="move">모양15</li>
+                <li class="n-resize">모양16</li>
+                <li class="no-drop">모양17</li>
+                <li class="none">모양18</li>
+                <li class="not-allowed">모양19</li>
+                <li class="pointer">모양20</li>
+                <li class="progress">모양21</li>
+                <li class="row-resize">모양22</li>
+                <li class="s-resize">모양23</li>
+                <li class="text">모양24</li>
+                <li class="url">모양25</li>
+                <li class="zoom-in">모양26</li>
+                <li class="zoom-out">모양27</li>
+                
+
+            </ul>
+        </article>
+        <article class="list">
+            <ul>
+                <li class="disc">목록기호1</li>
+                <li class="circle">목록기호2</li>
+                <li class="armenian">목록기호3</li>
+                <li class="aa1">목록기호1</li>
+                <li class="aa2">목록기호2</li>
+                <li class="aa3">목록기호3</li>
+                <li class="aa4">목록기호4</li>
+                <li class="aa5">목록기호5</li>
+                <li class="aa6">목록기호6</li>
+                <li class="aa7">목록기호7</li>
+                <li class="aa8">목록기호8</li>
+                <li class="aa9">목록기호9</li>
+                <li class="aa10">목록기호10</li>
+                <li class="aa11">목록기호11</li>
+                <li class="aa12">목록기호12</li>
+                <li class="aa13">목록기호13</li>
+                <li class="aa14">목록기호14</li>
+                <li class="aa15">목록기호15</li>
+                <li class="aa16">목록기호16</li>
+                <li class="aa17">목록기호17</li>
+                <li class="aa18">목록기호18</li>
+                <li class="aa19">목록기호19</li>
+                <li class="aa20">목록기호20</li>
+            </ul>
+            
+        </article>
+      
+        <div class="post">
+        <p>국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다. 국회의원은 국가이익을 우선하여 양심에 따라 직무를 행한다. 국가는 농수산물의 수급균형과 유통구조의 개선에 노력하여 가격안정을 도모함으로써 농·어민의 이익을 보호한다. 국무총리는 국회의 동의를 얻어 대통령이 임명한다. 모든 국민은 직업선택의 자유를 가진다. 모든 국민은 근로의 권리를 가진다. 국가는 사회적·경제적 방법으로 근로자의 고용의 증진과 적정임금의 보장에 노력하여야 하며, 법률이 정하는 바에 의하여 최저임금제를 시행하여야 한다. 대통령은 조국의 평화적 통일을 위한 성실한 의무를 진다. 제3항의 승인을 얻지 못한 때에는 그 처분 또는 명령은 그때부터 효력을 상실한다. 이 경우 그 명령에 의하여 개정 또는 폐지되었던 법률은 그 명령이 승인을 얻지 못한 때부터 당연히 효력을 회복한다.</p>
+
+<p>모든 국민은 법 앞에 평등하다. 누구든지 성별·종교 또는 사회적 신분에 의하여 정치적·경제적·사회적·문화적 생활의 모든 영역에 있어서 차별을 받지 아니한다. 연소자의 근로는 특별한 보호를 받는다. 모든 국민은 헌법과 법률이 정한 법관에 의하여 법률에 의한 재판을 받을 권리를 가진다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다. 모든 국민은 능력에 따라 균등하게 교육을 받을 권리를 가진다. 국회는 헌법 또는 법률에 특별한 규정이 없는 한 재적의원 과반수의 출석과 출석의원 과반수의 찬성으로 의결한다. 가부동수인 때에는 부결된 것으로 본다. 대통령의 선거에 관한 사항은 법률로 정한다.</p>
+
+<p>국가는 재해를 예방하고 그 위험으로부터 국민을 보호하기 위하여 노력하여야 한다. 누구든지 체포 또는 구속을 당한 때에는 적부의 심사를 법원에 청구할 권리를 가진다. 제안된 헌법개정안은 대통령이 20일 이상의 기간 이를 공고하여야 한다. 국토와 자원은 국가의 보호를 받으며, 국가는 그 균형있는 개발과 이용을 위하여 필요한 계획을 수립한다. 국무총리 또는 행정각부의 장은 소관사무에 관하여 법률이나 대통령령의 위임 또는 직권으로 총리령 또는 부령을 발할 수 있다. 사회적 특수계급의 제도는 인정되지 아니하며, 어떠한 형태로도 이를 창설할 수 없다. 공무원의 직무상 불법행위로 손해를 받은 국민은 법률이 정하는 바에 의하여 국가 또는 공공단체에 정당한 배상을 청구할 수 있다. 이 경우 공무원 자신의 책임은 면제되지 아니한다.</p>
+
+<p>제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다. 모든 국민은 신속한 재판을 받을 권리를 가진다. 형사피고인은 상당한 이유가 없는 한 지체없이 공개재판을 받을 권리를 가진다. 누구든지 체포 또는 구속을 당한 때에는 즉시 변호인의 조력을 받을 권리를 가진다. 다만, 형사피고인이 스스로 변호인을 구할 수 없을 때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다. 광물 기타 중요한 지하자원·수산자원·수력과 경제상 이용할 수 있는 자연력은 법률이 정하는 바에 의하여 일정한 기간 그 채취·개발 또는 이용을 특허할 수 있다. 모든 국민은 거주·이전의 자유를 가진다.</p>
+
+<p>농업생산성의 제고와 농지의 합리적인 이용을 위하거나 불가피한 사정으로 발생하는 농지의 임대차와 위탁경영은 법률이 정하는 바에 의하여 인정된다. 예비비는 총액으로 국회의 의결을 얻어야 한다. 예비비의 지출은 차기국회의 승인을 얻어야 한다. 대통령이 제1항의 기간내에 공포나 재의의 요구를 하지 아니한 때에도 그 법률안은 법률로서 확정된다. 대법원에 대법관을 둔다. 다만, 법률이 정하는 바에 의하여 대법관이 아닌 법관을 둘 수 있다. 국가는 평생교육을 진흥하여야 한다. 신체장애자 및 질병·노령 기타의 사유로 생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.</p>
+</div>
+    
+
+    <article class="ts">
+        <div class="tit-box">
+            <h2 class="ts-tit1">로드포렴</h2>
+        </div>
+        <div class="tit-box">
+            <h2 class="ts-tit2">Lorem Ipsum</h2>
+        </div>
+        <div class="tit-box">
+            <h2 class="ts-tit3">Lorem Ipsum</h2>
+        </div>
+        <div class="tit-box">
+            <h2 class="ts-tit4">Lorem Ipsum</h2>
+        </div>
+        <div class="tit-box">
+            <h2 class="ts-tit5">Lorem Ipsum</h2>
+        </div>
+    </article>
+
+        
+    </div>
+    <div id="con">
+
+
+
+
+
+
+
+
+    <h1>기타 속성</h1>
+    <p>list-style: type position image</p>
+    <p>메뉴나 목록의 기호를 표시하는 속성</p>
+    <br><hr><br>
+
+    <h2>목록 기호</h2>
+    <p>list-style-type : disc(가운데 구멍뚫린) | circle(외곽선만 있는) | square <br>
+        dicemal | armenian | georgian | hebrew | hiragana | katakana | lower-alpha | lower-greek | lower-latin <br>
+        lower-roman | upper-alpa | upper-greek | upper-latin | upper-roman | cjk-ideographic </p>
+        <p>li 요소에 표시되는 목록 기호로 부모 요소 <br>
+        ol - 숫자가 순서대로 앞에 표기됨 <br>
+        ul - disc가 앞에 표기됨 </p>
+        <br><hr><br>
+
+    <h2>목록 기호 위치</h2>
+    <p>list-style-position : inside | outside</p>
+    <br><hr><br>
+
+    <h2>목록 이미지</h2>
+    <p>list-style-image : none | url(파일경로 및 이름)</p>
+    <p>목록 기호 위치에 이미지가 표시되며 파일경로 | 이름은 "", ''로 묶을 수있으며 생략가능하다. <br>
+    다만, 중간에 띄어쓰기나 한글 및 특수문자로 이루어져 있는 경우는 반드시 ""로 묶어야한다.</p>
+    <br><hr><br>
+
+    <h1>마우스 포인터</h1>
+    <p>cursor : alias | all-scroll | auto | cell | col-size | context-menu(모든모양) | copy | crosshair | default <br>
+        | grab | grabbing | help | move | no-drop | not-allowed | pointer | progress | row-resize | zoom-in | zoom-out | text | url(png | cur) 20, 30 auto |
+        (nwse)-resize : n,w,s,e,nw,ns,ew,es </p>
+    <p>해당 요소의 영역에 마우스 포인터가 위치되면, 그 마우스 포인터 모양을 지정할 수 있는 속성</p>
+    <br><hr><br>
+
+    <h1>그림자 속성</h1>
+    <p>shadow - text-shadow | box-shadow </p>
+    <p>text나 bow의 외부/내부 그림자를 말하며, 크기 속성에 포함이 되지않음</p>
+    <br><hr><br>
+
+    <h2>텍스트/박스 그림자</h2>
+    <p>text-shadow : x y blur color</p>
+    <p>box-shadow : x-length y-length blur-length color | <p>x-length y-length spred blur-length color</p></p>
+    <p>x값 : -/+ = 왼쪽/오른쪽 방향이다</p>
+    <p>y값 : -/+ = 위/아래 방향이다.</p>
+    <p>x y blur color 양을 여러 단계에 걸쳐 지정하면, 그림자가 입체모양으로 보인다.</p>
+    <p></p>
+    <br><hr><br>
+
+
+
+
+</body>
+</html>
